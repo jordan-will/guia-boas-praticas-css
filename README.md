@@ -125,6 +125,12 @@ BEM promove o desacoplamento e reutilização de código com uma estrutura clara
   app.scss    
 ```
 
+### Dica prática para evitar conflitos
+- Use BEM para estruturar seus componentes (modules)
+- Use OOCSS para criar objetos reutilizáveis (layout, base)
+- Use SMACSS para definir estados e temas (state, themes)
+- Use Namespaces para dar clareza à função da classe (c-, l-, u-, is-, js-)
+
 ### Benefícios
 - Código desacoplado
 - Reúso automático de código
