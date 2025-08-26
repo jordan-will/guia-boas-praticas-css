@@ -109,10 +109,11 @@ BEM promove o desacoplamento e reutilização de código com uma estrutura clara
 
 
 ### Checklist de boas práticas
-[x] Evitar o uso de IDs em seletores CSS
-[x] Usar classes semânticas e descritivas
-[x] Prefira transform e opacity para animações
-[x] Agrupar alterações no DOM para evitar reflows
-[x] Alinhar convenções de nomenclatura para a equipe
-[x] Usar seletores curtos e performáticos
-[x] Separar as responsabilidades entre estilo, comportamento e estrutura
+- [x] Evitar o uso de IDs em seletores CSS  
+- [x] Usar classes semânticas e descritivas  
+- [x] Prefira transform e opacity para animações  
+- [x] Agrupar alterações no DOM para evitar reflows  
+- [x] Alinhar convenções de nomenclatura para a equipe  
+- [x] Usar seletores curtos e performáticos  
+- [x] Separar as responsabilidades entre estilo, comportamento e estrutura  
+
