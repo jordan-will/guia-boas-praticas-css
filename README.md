@@ -26,7 +26,7 @@ Este documento apresenta diretrizes práticas para escrever CSS de forma eficien
 }
 ```
 
-### Uso de Namespaces
+## Uso de Namespaces
 Namespaces são prefixos que indicam a função de uma classe no CSS. Eles facilitam a leitura e manutenção do código.
 
 Prefixo	Significado	Uso
@@ -48,45 +48,63 @@ qa-: Quality Assurance, classes para testes automatizados
 SMACSS propõe uma categorização clara para organizar o CSS
 
 ### Base
-- Regras padrão aplicadas a elementos HTML
-- Não usa classes ou IDs
+- Aplicados a seletores de elementos, atributos, pseudo classes, etc.
+- Não inclui ids e classes.
+- Definem a aparência padrão dos elementos.
+
 ```html
 a { text-decoration: none; }
 input[type="text"] { border: 1px solid #ccc; }
 ```
 ### Layout
-- Estrutura geral da página
-- Divide em seções principais
+- São únicos
+- Componentes maiores em um projeto.
+- Divide as páginas em seções, contendo um ou mais módulos.
 - Prefixo: l- ou layout-
 ```css
 .l-header { ... }
 .l-sidebar { ... }
 ```
 ### Módulos
-- Componentes reutilizáveis
-- Isolados e específicos
+- Contém as principais regras de estilização
+- São mais específicos que  os layouts
+- São isolados
+- Proibido uso de ids e seletores de elementos.
 - Prefixo: m- ou module-
 ```css
 .m-card { ... }
 .m-carousel { ... }
 ```
 ### Estado
-- Estilos condicionais
+- Define como um layout ou módulo se comporta sob determinada condição/estado.
+- Sobrecrever ou incrementar estilos.
+- É possível usar o atributo data-
 - Prefixo: is-
 ```css
 .is-collapsed { display: none; }
 ```
 ### Tema
-- Aparência alternativa para módulos/layouts
-- Sobrescreve estilos existentes
+- Como layouts e módulos devem aparentar sob determinadas condições.
+- Quando o projeto quer oferecer aparência diferenciada
+- Sobrescrever regras já criadas em outras categorias SMACSS
+- Prefixo: t- ou theme-
 ```css
 .t-dark .m-card { background-color: #222; color: #fff; }
 ```
 ## BEM (Block, Element, Modifier)
 BEM promove o desacoplamento e reutilização de código com uma estrutura clara:
-- Bloco: Entidade independente (.menu)
-- Elemento: Parte do bloco (.menu__item)
-- Modificador: Variação de estilo (.menu__item--active)
+### Bloco 
+- Entidade independente com seu próprio significado (.menu)
+- O nome da classe é o nome do bloco
+
+### Elemento 
+- Descendente de um bloco, ajuda a formá-lo.
+- São delimitados com __ (.menu__item)
+
+### Modificador:
+- Um estado diferente de um bloco ou elemento.
+- Delimitados com -- (.menu__item--active)
+
 
 **Exemplo**
 ```html
@@ -107,6 +125,15 @@ BEM promove o desacoplamento e reutilização de código com uma estrutura clara
   app.scss    
 ```
 
+### Benefícios
+- Código desacoplado
+- Reúso automático de código
+- Menos repetições
+- Rápida identificação de estruturas HTML através do CSS e vice-versa
+- Independência absoluta de classe
+- Seletores menores e mais performáticos
+- CSS mais manutenível
+- Padronização do CSS
 
 ### Checklist de boas práticas
 - [x] Evitar o uso de IDs em seletores CSS  
